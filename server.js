@@ -1,6 +1,5 @@
-
-function loadExpress(){
-    const express = require("./config/express")
-    express()
+function loadExpress() {
+	const express = require('./config/express')
+	express()
 }
 loadExpress()
