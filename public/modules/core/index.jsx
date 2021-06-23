@@ -6,4 +6,5 @@ function App(props) {
 	return <div>Hello World react fix g</div>
 }
 
-ReactDOM.render(<App />, document.getElementById('index'))
+const root = document.getElementById('index')
+ReactDOM.render(<App />, root)

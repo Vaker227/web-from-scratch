@@ -1,0 +1,22 @@
+{
+	"root": true,
+	"env": {
+		"node": true,
+		"browser": true,
+		"es6": true
+	},
+	"plugins": ["react/recomended"],
+	"extends": ["standard", "prettier"],
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"rules": {
+		"space-infix-ops": "warn",
+		"no-console": [1]
+	},
+	"ignorePatterns": ["/gulpfile.js"]
+}

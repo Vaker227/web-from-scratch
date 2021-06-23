@@ -4,7 +4,6 @@ const { series, watch, parallel } = require('gulp')
 const gulp = require('gulp')
 const livereload = require('gulp-livereload')
 const nodemon = require('gulp-nodemon')
-const { default: gulpfile } = require('../../4handy/4handy-work/gulpfile')
 
 const paths = {
 	clientJS: ['public/modules/**/**'],
