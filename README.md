@@ -1,10 +1,10 @@
 # web-from-scratch
 
-## folder public
+#### folder public
 file library and modules for front-end. 
 
-## config
+#### config
 file config
 
-## src
+#### src
 file for back-end
