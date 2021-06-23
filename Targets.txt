@@ -1,0 +1,26 @@
+# : done
+- : processing
+. : expecting
+
+# nodejs init 
+# express init 
+# layout with handlebars 
+# git init 
+# babel in webpack 
+# gulp init 
+# auto reload with gulp
+# prettier 
+# eslint 
+- husky check before commit
+
+
+. lodash
+. bootstrap
+. glob
+. passportJS
+. mongoose + mongodb
+. redis
+. local storage 
+. automation test cypress 
+
+
