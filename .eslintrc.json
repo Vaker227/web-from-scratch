@@ -5,8 +5,7 @@
 		"browser": true,
 		"es6": true
 	},
-	"plugins": ["react/recomended"],
-	"extends": ["standard", "prettier"],
+	"extends": ["standard", "prettier", "plugin:react/recommended"],
 	"parserOptions": {
 		"ecmaVersion": 2018,
 		"sourceType": "module",
@@ -14,9 +13,14 @@
 			"jsx": true
 		}
 	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
 	"rules": {
 		"space-infix-ops": "warn",
-		"no-console": [1]
+		"no-console": [2]
 	},
 	"ignorePatterns": ["/gulpfile.js"]
 }
