@@ -20,7 +20,7 @@
 	},
 	"rules": {
 		"space-infix-ops": "warn",
-		"no-console": [2]
+		"no-console": [1]
 	},
 	"ignorePatterns": ["/gulpfile.js"]
 }
