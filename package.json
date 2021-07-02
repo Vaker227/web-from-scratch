@@ -57,7 +57,7 @@
     "webpack-cli": "^4.7.2"
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint ",
-    "*": "npx prettier --write"
+    "*.{js,jsx,html,handlebars,json}": "npx prettier --write",
+    "*.{js,jsx}": "eslint "
   }
 }
