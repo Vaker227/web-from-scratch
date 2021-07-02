@@ -2,6 +2,7 @@
 /public/dist/
 /package.json
 /package-lock.json
-/yarn
+/yarn.lock
+/Targets.txt
 /.vscode
 /.gitignore

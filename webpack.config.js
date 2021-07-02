@@ -1,9 +1,10 @@
 const path = require('path')
 
 module.exports = {
-	entry: '/public/modules/core/index.js',
+	entry: '/public/modules/core/index.jsx',
 	output: {
-		filename: 'main.js',
+		filename: '[name].js',
+		chunkFilename: '[name].js',
 		path: path.resolve(__dirname, 'public/dist'),
 	},
 	module: {
@@ -23,5 +24,18 @@ module.exports = {
 				use: ['style-loader', 'css-loader'],
 			},
 		],
+	},
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				default: false,
+				vendors: false,
+				vendor: {
+					chunks: 'initial',
+					test: /node_modules/,
+					name: 'vendor',
+				},
+			},
+		},
 	},
 }

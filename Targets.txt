@@ -11,10 +11,14 @@
 # auto reload with gulp
 # prettier 
 # eslint 
-- husky check before commit
+# husky check before commit
+# morgan
+# react-router
+# lodash
 
 
-. lodash
+. server-router
+. server-controller
 . bootstrap
 . glob
 . passportJS
@@ -22,5 +26,5 @@
 . redis
 . local storage 
 . automation test cypress 
-
+. sw
 
