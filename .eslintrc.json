@@ -22,7 +22,8 @@
 	"rules": {
 		"space-infix-ops": "warn",
 		"no-console": [1],
-		"spaced-comment": [1]
+		"spaced-comment": [1],
+		"react/prop-types": [0]
 	},
 	"ignorePatterns": ["/gulpfile.js", "pulic/dist/*.js"]
 }

@@ -15,11 +15,15 @@
 # morgan
 # react-router
 # lodash
+# sass
+# bootstrap
+# animation 
 
+- redux
 
+. tooltip (popper.js)
 . server-router
 . server-controller
-. bootstrap
 . glob
 . passportJS
 . mongoose + mongodb

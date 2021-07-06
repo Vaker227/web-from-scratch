@@ -5,7 +5,7 @@ require('@babel/register')({
 const React = require('react')
 const ReactDOMServer = require('react-dom/server.js')
 const { StaticRouter } = require('react-router-dom')
-const appJSX = require('../public/modules/core/app.jsx').default
+const appJSX = require('../public/modules/core/components/app.jsx').default
 
 module.exports.renderJSX = (req, res) => {
 	const App = React.createElement(
