@@ -4,7 +4,6 @@ import { Loading } from './loading.jsx'
 import { Route } from 'react-router-dom'
 import Error from './error-handle.jsx'
 import store from '../redux/store.js'
-
 // define routes and route's path
 export const routes = [
 	{ path: 'home', file: 'home/redux/home' },

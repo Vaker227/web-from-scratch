@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Samsung from '../components/samsung.jsx'
+import Samsung from '../components/samsung.client.component.jsx'
 const SAMSUNG_RENDER = 'SAMSUNG_RENDER'
 const SamsungSTP = (state) => {
 	return state.samsung

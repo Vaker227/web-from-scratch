@@ -1,6 +1,8 @@
 import { createStore, combineReducers, compose } from 'redux'
-
-const staticReducers = {}
+import { HeaderReducer } from '../../nav/redux/header.client.redux.js'
+const staticReducers = {
+	header: HeaderReducer,
+}
 const defaultState = {}
 
 function createReducer(asyncReducers) {

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Home from '../components/home.jsx'
+import Home from '../components/home.client.component.jsx'
 const HOME_RENDER = 'HOME_RENDER'
 const HomeSTP = (state) => {
 	return state.home

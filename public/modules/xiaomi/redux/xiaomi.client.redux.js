@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
-import Xiaomi from '../components/xiaomi.jsx'
+import Xiaomi from '../components/xiaomi.client.component.jsx'
 const XIAOMI_RENDER = 'XIAOMI_RENDER'
+
 const XiaomiSTP = (state) => {
 	return state.xiaomi
 }
