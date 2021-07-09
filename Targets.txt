@@ -18,14 +18,14 @@
 # sass
 # bootstrap
 # animation 
+# redux
 
-- redux
+- passportJS
 
 . tooltip (popper.js)
 . server-router
 . server-controller
 . glob
-. passportJS
 . mongoose + mongodb
 . redis
 . local storage 
