@@ -21,12 +21,12 @@
 # redux
 
 - passportJS
-
-. tooltip (popper.js)
+. mongoose + mongodb
 . server-router
 . server-controller
+
+. tooltip (popper.js)
 . glob
-. mongoose + mongodb
 . redis
 . local storage 
 . automation test cypress 
