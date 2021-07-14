@@ -8,7 +8,7 @@ const del = require('del')
 
 const paths = {
 	clientJS: ['public/modules/**/**'],
-	serverJS: ['server.js', 'src/app/views', 'config'],
+	serverJS: ['server.js', 'app/', 'config'],
 	distFiles: ['public/dist/**', '!public/dist/'],
 }
 
@@ -37,7 +37,7 @@ function runServer() {
 	return nodemon({
 		script: 'server.js',
 		nodeArgs: ['--inspect'],
-		watch: [...paths.serverJS, paths.clientJS],
+		watch: [...paths.serverJS, ...paths.clientJS],
 		ext: 'cjs,js,html,jsx',
 	})
 }
@@ -52,5 +52,7 @@ exports.default = series(
 	useWebpack,
 	parallel(runServer, watchChangeClient)
 )
+
 exports.build = useWebpack
+exports.server = parallel(runServer, watchChangeClient)
 exports.watch = watchChangeClient

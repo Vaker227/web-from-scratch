@@ -1,8 +1,40 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { MenuToggle } from '../redux/header.client.redux.js'
+import _ from 'lodash'
+
+function LoadingUser(props) {
+	return (
+		<div
+			className={'circle-loader mx-auto'}
+			style={{ borderWidth: 4, height: 30, width: 30 }}
+		></div>
+	)
+}
+
+function LoginButton(props) {
+	return (
+		<div className={'btn btn-primary mx-auto'} style={{ minWidth: 150 }}>
+			Sign in
+		</div>
+	)
+}
+
+function UserMenu(props) {
+	return <div className={'float-end me-3'}>{props.name}</div>
+}
 
 export default function Header(props) {
+	useEffect(() => {
+		props.getUserInfo()
+	}, [])
+	const userPlaceholder = !_.get(props, 'users.gotUserInfo') ? (
+		<LoadingUser />
+	) : _.get(props, 'users.user') ? (
+		<UserMenu name={props.users.user.username} />
+	) : (
+		<LoginButton />
+	)
 	return (
 		<div id="header" className={'container-fluid py-2'}>
 			<div className="row">
@@ -29,7 +61,7 @@ export default function Header(props) {
 						</Link>
 					</div>
 				</div>
-				<div className="col-2 ">3</div>
+				<div className="col-2 ">{userPlaceholder}</div>
 			</div>
 		</div>
 	)

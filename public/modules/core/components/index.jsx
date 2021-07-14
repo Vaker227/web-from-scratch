@@ -6,8 +6,8 @@ import App from './app.jsx'
 // import css file
 import '../../../styles/bootstrap.scss'
 import '../../../styles/index.css'
-import '../../nav/css/header.client.css'
-import '../../nav/css/menu.client.css'
+import '../../nav/style/header.client.css'
+import '../../nav/style/menu.client.css'
 
 // import fonawesome
 import '@fortawesome/fontawesome-free/js/fontawesome'

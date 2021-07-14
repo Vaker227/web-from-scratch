@@ -2,6 +2,9 @@ require('@babel/register')({
 	presets: ['@babel/preset-env', '@babel/preset-react'],
 })
 
+// Compile async/await of client's files from server
+require('@babel/polyfill')
+
 const React = require('react')
 const ReactDOMServer = require('react-dom/server.js')
 const { StaticRouter } = require('react-router-dom')

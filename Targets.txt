@@ -6,7 +6,7 @@
 # express init 
 # layout with handlebars 
 # git init 
-# babel in webpack 
+# babel in webpack (polyfill need specificed)
 # gulp init 
 # auto reload with gulp
 # prettier 
@@ -19,14 +19,16 @@
 # bootstrap
 # animation 
 # redux
+# passportJS
+# mongoose + mongodb
+# server-router
+# server-controller
+# env
+# glob
 
-- passportJS
-. mongoose + mongodb
-. server-router
-. server-controller
+- alert
+- tooltip (popper.js)
 
-. tooltip (popper.js)
-. glob
 . redis
 . local storage 
 . automation test cypress 

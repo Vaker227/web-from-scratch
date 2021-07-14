@@ -1,7 +1,11 @@
-import { createStore, combineReducers, compose } from 'redux'
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import { HeaderReducer } from '../../nav/redux/header.client.redux.js'
+import { UserReducer } from '../../user/redux/user.client.redux.js'
+import thunk from 'redux-thunk'
+
 const staticReducers = {
 	header: HeaderReducer,
+	users: UserReducer,
 }
 const defaultState = {}
 
@@ -11,11 +15,13 @@ function createReducer(asyncReducers) {
 		...asyncReducers,
 	})
 }
-const enhancers = compose(
-	typeof window !== 'undefined' && window.devToolsExtension
+const reduxDevTools = () => {
+	return typeof window !== 'undefined' && window.devToolsExtension
 		? window.devToolsExtension()
 		: (f) => f
-)
+}
+
+const enhancers = compose(reduxDevTools(), applyMiddleware(thunk))
 
 export default function configureStore() {
 	const store = createStore(createReducer(), defaultState, enhancers)

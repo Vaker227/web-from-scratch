@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
 	plugins: [new MiniCssExtractPlugin()],
-	entry: '/public/modules/core/components/index.jsx',
+	entry: ['@babel/polyfill', '/public/modules/core/components/index.jsx'],
 	output: {
 		filename: '[name].js',
 		chunkFilename: '[name].js',

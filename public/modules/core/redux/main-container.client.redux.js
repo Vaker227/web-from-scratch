@@ -1,10 +1,6 @@
 import { connect } from 'react-redux'
-import MainContainer from '../components/main-container.jsx'
+import MainContainer from '../../core/components/main-container.client.component.jsx'
 
-const MainContainerSTP = (state) => {
-	return state.header
-}
-
-const MainContainerRedux = connect(MainContainerSTP)(MainContainer)
+const MainContainerRedux = connect()(MainContainer)
 
 export { MainContainerRedux as MainContainer }
