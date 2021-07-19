@@ -4,6 +4,7 @@ const { series, watch, parallel } = require('gulp')
 const gulp = require('gulp')
 const livereload = require('gulp-livereload')
 const nodemon = require('gulp-nodemon')
+const exec = require('child_process').exec
 const del = require('del')
 
 const paths = {
@@ -42,13 +43,26 @@ function runServer() {
 	})
 }
 
+function genRoutesFile(cb) {
+	exec('node config/generate-client-path.js', function (err, stdout, stderr) {
+		if (stdout) {
+			console.log(stdout)
+		}
+		if (stderr) {
+			console.log(stderr)
+		}
+		cb(err)
+	})
+}
+
 function watchChangeClient() {
 	livereload.listen(35729)
-	watch(paths.clientJS, series(cleanUpDist, useWebpack))
+	watch(paths.clientJS, series(cleanUpDist, genRoutesFile, useWebpack))
 }
 
 exports.default = series(
 	cleanUpDist,
+	genRoutesFile,
 	useWebpack,
 	parallel(runServer, watchChangeClient)
 )
@@ -56,3 +70,4 @@ exports.default = series(
 exports.build = useWebpack
 exports.server = parallel(runServer, watchChangeClient)
 exports.watch = watchChangeClient
+exports.genRoutes = genRoutesFile

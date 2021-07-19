@@ -4,16 +4,12 @@ import { Loading } from './loading.jsx'
 import { Route } from 'react-router-dom'
 import Error from './error-handle.jsx'
 import store from '../redux/store.js'
+
 // define routes and route's path
-export const routes = [
-	{ path: 'home', file: 'home/redux/home' },
-	{ path: 'iphone', file: 'iphone/redux/iphone' },
-	{ path: 'xiaomi', file: 'xiaomi/redux/xiaomi' },
-	{ path: 'samsung', file: 'samsung/redux/samsung' },
-]
+import routers from '../../../routes.js'
 
 // generate routes
-const Routes = routes.map((route) => {
+const Routes = routers.map((route) => {
 	return (
 		<Route
 			key={route.path}
