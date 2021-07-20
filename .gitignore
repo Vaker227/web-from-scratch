@@ -1,4 +1,4 @@
 **/node_modules/**
 /public/dist/
-/public/routes.js
+/public/paths/
 /Targets

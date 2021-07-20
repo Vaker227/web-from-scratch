@@ -6,6 +6,7 @@ const Menu = (props) => {
 			id="sidebar"
 			className="d-flex flex-column"
 			style={{
+				display: props.hidden ? 'none' : 'block',
 				width: props.menu ? 200 : 60,
 				height: '100vh',
 			}}

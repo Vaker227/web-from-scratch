@@ -1,1 +1,1 @@
-module.exports = { path: 'iphone', file: 'iphone/redux/iphone' }
+module.exports = [{ path: '/iphone', file: 'iphone/redux/iphone' }]

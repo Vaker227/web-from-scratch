@@ -43,8 +43,9 @@ function runServer() {
 	})
 }
 
+//generate file list of routes
 function genRoutesFile(cb) {
-	exec('node config/generate-client-path.js', function (err, stdout, stderr) {
+	exec('node config/generate-client-paths.js', function (err, stdout, stderr) {
 		if (stdout) {
 			console.log(stdout)
 		}
@@ -55,14 +56,34 @@ function genRoutesFile(cb) {
 	})
 }
 
+// generate file list of reducers
+function genReducers(cb) {
+	exec(
+		'node config/generate-client-reducers.js',
+		function (err, stdout, stderr) {
+			if (stdout) {
+				console.log(stdout)
+			}
+			if (stderr) {
+				console.log(stderr)
+			}
+			cb(err)
+		}
+	)
+}
+
 function watchChangeClient() {
 	livereload.listen(35729)
-	watch(paths.clientJS, series(cleanUpDist, genRoutesFile, useWebpack))
+	watch(
+		paths.clientJS,
+		series(cleanUpDist, genRoutesFile, genReducers, useWebpack)
+	)
 }
 
 exports.default = series(
 	cleanUpDist,
 	genRoutesFile,
+	genReducers,
 	useWebpack,
 	parallel(runServer, watchChangeClient)
 )
@@ -71,3 +92,4 @@ exports.build = useWebpack
 exports.server = parallel(runServer, watchChangeClient)
 exports.watch = watchChangeClient
 exports.genRoutes = genRoutesFile
+exports.genReducers = genReducers

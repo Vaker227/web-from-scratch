@@ -37,7 +37,7 @@ module.exports = {
 				default: false,
 				vendors: false,
 				vendor: {
-					chunks: 'initial',
+					chunks: 'all',
 					test: /node_modules/,
 					name: 'vendor',
 				},

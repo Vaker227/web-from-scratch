@@ -1,1 +1,1 @@
-module.exports = { path: 'xiaomi', file: 'xiaomi/redux/xiaomi' }
+module.exports = [{ path: '/xiaomi', file: 'xiaomi/redux/xiaomi' }]

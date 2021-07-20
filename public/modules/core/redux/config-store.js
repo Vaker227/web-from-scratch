@@ -1,11 +1,10 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
-import { HeaderReducer } from '../../nav/redux/header.client.redux.js'
-import { UserReducer } from '../../user/redux/user.client.redux.js'
 import thunk from 'redux-thunk'
+
+import { Reducer as HeaderReducer } from '../../nav/redux/nav.client.reducer'
 
 const staticReducers = {
 	header: HeaderReducer,
-	users: UserReducer,
 }
 const defaultState = {}
 

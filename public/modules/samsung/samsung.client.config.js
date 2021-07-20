@@ -1,1 +1,1 @@
-module.exports = { path: 'samsung', file: 'samsung/redux/samsung' }
+module.exports = [{ path: '/samsung', file: 'samsung/redux/samsung' }]

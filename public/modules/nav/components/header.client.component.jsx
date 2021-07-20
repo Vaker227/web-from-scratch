@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { MenuToggle } from '../redux/header.client.redux.js'
+import { MenuToggle } from '../redux/nav.client.redux.js'
 import _ from 'lodash'
 
 function LoadingUser(props) {
@@ -14,9 +14,11 @@ function LoadingUser(props) {
 
 function LoginButton(props) {
 	return (
-		<div className={'btn btn-primary mx-auto'} style={{ minWidth: 150 }}>
-			Sign in
-		</div>
+		<Link to="/login">
+			<div className={'btn btn-primary mx-auto'} style={{ minWidth: 150 }}>
+				Sign in
+			</div>
+		</Link>
 	)
 }
 

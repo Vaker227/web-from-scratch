@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Redirect, useLocation } from 'react-router-dom'
 import Routes from './loadable-route.jsx'
 
-import { Menu } from '../../nav/redux/header.client.redux.js'
+import { Menu } from '../../nav/redux/nav.client.redux.js'
 
 const MainContainer = (props) => {
 	const location = useLocation()

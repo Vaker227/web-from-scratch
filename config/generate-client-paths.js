@@ -6,10 +6,12 @@ const paths = glob.sync('public/modules/**/*.client.config.js')
 
 const objs = []
 paths.forEach((path) => {
-	objs.push(require('../' + path))
+	require('../' + path).forEach((route) => {
+		objs.push(route)
+	})
 })
 fs.writeFileSync(
-	'./public/routes.js',
+	'./public/paths/routes.js',
 	'module.exports = ' + util.inspect(objs),
 	'utf-8'
 )

@@ -1,6 +1,6 @@
-// import { connect } from 'react-redux'
-// import axios from 'axios'
 import UserActionType from '../../user/redux/action-type.client.redux.js'
+
+const key = 'users'
 
 const UserReducer = (state = { user: null, gotUserInfo: false }, action) => {
 	switch (action.type) {
@@ -10,4 +10,4 @@ const UserReducer = (state = { user: null, gotUserInfo: false }, action) => {
 			return state
 	}
 }
-export { UserReducer }
+export { UserReducer as Reducer, key }

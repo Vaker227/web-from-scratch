@@ -1,11 +1,12 @@
 import axios from 'axios'
 import { connect } from 'react-redux'
+
 import MenuToggle from '../components/menu-toggle.client.component.jsx'
 import Header from '../components/header.client.component.jsx'
-import Menu from '../../nav/components/menu.client.component.jsx'
-import UserActionType from '../../user/redux/action-type.client.redux.js'
+import Menu from '../components/menu.client.component.jsx'
 
-const SET_MENU = 'SET_MENU'
+import UserActionType from '../../user/redux/action-type.client.redux.js'
+import NavActionType from '../../nav/redux/action-type.client.redux.js'
 
 // Menu toggle
 const MenuToggleSTP = (state) => {
@@ -14,7 +15,7 @@ const MenuToggleSTP = (state) => {
 
 const MenuToggleDTP = (dispatch) => {
 	return {
-		toggleMenu: () => dispatch({ type: SET_MENU }),
+		toggleMenu: () => dispatch({ type: NavActionType.setMenu }),
 	}
 }
 
@@ -49,20 +50,8 @@ const HeaderDTP = (dispatch) => {
 
 const HeaderRedux = connect(HeaderSTP, HeaderDTP)(Header)
 
-// Reducer
-const HeaderReducer = (state = { menu: false }, action) => {
-	switch (action.type) {
-		case SET_MENU:
-			return Object.assign({}, state, {
-				menu: !state.menu,
-			})
-		default:
-			return state
-	}
-}
 export {
 	MenuToggleRedux as MenuToggle,
 	HeaderRedux as Header,
 	MenuRedux as Menu,
-	HeaderReducer,
 }

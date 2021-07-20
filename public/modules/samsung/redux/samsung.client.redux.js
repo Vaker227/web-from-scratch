@@ -13,14 +13,4 @@ const SamsungDTP = (dispatch) => {
 
 const SamsungRedux = connect(SamsungSTP, SamsungDTP)(Samsung)
 
-const SamsungReducer = (state = { samsungRender: 0 }, action) => {
-	switch (action.type) {
-		case SAMSUNG_RENDER:
-			return Object.assign({}, state, {
-				samsungRender: state.samsungRender + 1,
-			})
-		default:
-			return state
-	}
-}
-export { SamsungRedux as CP, SamsungReducer as Reducer }
+export { SamsungRedux as CP }

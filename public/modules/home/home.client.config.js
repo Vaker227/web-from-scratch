@@ -1,1 +1,1 @@
-module.exports = { path: 'home', file: 'home/redux/home' }
+module.exports = [{ path: '/home', file: 'home/redux/home' }]

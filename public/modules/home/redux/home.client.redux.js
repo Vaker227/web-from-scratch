@@ -13,12 +13,4 @@ const HomeDTP = (dispatch) => {
 
 const HomeRedux = connect(HomeSTP, HomeDTP)(Home)
 
-const HomeReducer = (state = { homeRender: 0 }, action) => {
-	switch (action.type) {
-		case HOME_RENDER:
-			return Object.assign({}, state, { homeRender: state.homeRender + 1 })
-		default:
-			return state
-	}
-}
-export { HomeRedux as CP, HomeReducer as Reducer }
+export { HomeRedux as CP }
