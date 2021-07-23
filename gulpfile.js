@@ -13,23 +13,37 @@ const paths = {
 	distFiles: ['public/dist/**', '!public/dist/'],
 }
 
-async function useWebpack() {
+function useWebpack() {
 	const webpackRunner = webpack(webpackConfig)
-	await webpackRunner.run((err, stats) => {
-		if (err) {
-			console.log(err)
-			return
-		}
-		if (stats.hasErrors()) {
-			stats.toJson().errors.map((error) => {
-				console.log(error.details)
-			})
-			return
-		}
-		return gulp.src('public/dist/*.js').pipe(livereload())
+	return new Promise((resolve, reject) => {
+		webpack(webpackConfig, (err, stats) => {
+			if (err) {
+				return reject(err)
+			}
+			if (stats.hasErrors()) {
+				return reject(new Error(stats.compilation.errors.join('\n')))
+			}
+			resolve(gulp.src('public/dist/*.js').pipe(livereload()))
+		})
 	})
 }
 
+// async function useWebpack() {
+// 	const webpackRunner = webpack(webpackConfig)
+// 	await webpackRunner.run((err, stats) => {
+// 		if (err) {
+// 			console.log(err)
+// 			return
+// 		}
+// 		if (stats.hasErrors()) {
+// 			stats.toJson().errors.map((error) => {
+// 				console.log(error.details)
+// 			})
+// 			return
+// 		}
+// 		return gulp.src('public/dist/*.js').pipe(livereload())
+// 	})
+// }
 function cleanUpDist() {
 	return del(paths.distFiles)
 }

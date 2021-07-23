@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Home from '../components/home.client.component.jsx'
+import Home from '../views/home.client.view.jsx'
 const HOME_RENDER = 'HOME_RENDER'
 const HomeSTP = (state) => {
 	return state.home
@@ -13,4 +13,4 @@ const HomeDTP = (dispatch) => {
 
 const HomeRedux = connect(HomeSTP, HomeDTP)(Home)
 
-export { HomeRedux as CP }
+export { HomeRedux as Page }

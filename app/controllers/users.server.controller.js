@@ -13,7 +13,7 @@ module.exports.login = (req, res, next) => {
 						res.send(err)
 					}
 				})
-				res.redirect('/')
+				res.jsonp(req.user)
 			} else {
 				res.send(info)
 			}
@@ -22,7 +22,7 @@ module.exports.login = (req, res, next) => {
 }
 module.exports.logout = (req, res, next) => {
 	req.logout()
-	res.redirect('/')
+	res.jsonp(req.user)
 }
 
 module.exports.register = async (req, res) => {

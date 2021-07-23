@@ -1,8 +1,17 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const BundleAnalyzerPlugin =
+	require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
+const plugins = [new MiniCssExtractPlugin()]
+if (process.env.ANALYZER) {
+	plugins.push(new BundleAnalyzerPlugin())
+}
+
+const mode = process.env.MODE
 module.exports = {
-	plugins: [new MiniCssExtractPlugin()],
+	mode: mode,
+	plugins: plugins,
 	entry: ['@babel/polyfill', '/public/modules/core/components/index.jsx'],
 	output: {
 		filename: '[name].js',

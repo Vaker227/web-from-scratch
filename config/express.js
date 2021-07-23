@@ -28,6 +28,9 @@ module.exports = function () {
 	//	morgan logger
 	app.use(morgan('dev'))
 
+	// parse request
+	app.use(express.json())
+
 	// create session storage
 	const sessionStore = mongoStore.create({
 		mongoUrl: `mongodb://${config.db.host}:${config.db.port}/${config.db.collection}`,

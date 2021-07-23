@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { MenuToggle } from '../redux/nav.client.redux.js'
 import _ from 'lodash'
+
+import { GetUserInfo } from '../../user/services/user.client.service.js'
+
+import UserMenu from '../components/user-menu.client.component.jsx'
 
 function LoadingUser(props) {
 	return (
@@ -22,21 +26,31 @@ function LoginButton(props) {
 	)
 }
 
-function UserMenu(props) {
-	return <div className={'float-end me-3'}>{props.name}</div>
-}
-
 export default function Header(props) {
+	const history = useHistory()
 	useEffect(() => {
-		props.getUserInfo()
+		GetUserInfo()
+			.then((res) => {
+				props.getUserInfo(res.data)
+			})
+			.catch(() => {
+				props.getUserInfo(null)
+			})
 	}, [])
+
+	const handleLogout = () => {
+		props.logoutUser()
+		history.push('/')
+	}
+
 	const userPlaceholder = !_.get(props, 'users.gotUserInfo') ? (
 		<LoadingUser />
 	) : _.get(props, 'users.user') ? (
-		<UserMenu name={props.users.user.username} />
+		<UserMenu name={props.users.user.username} handleLogout={handleLogout} />
 	) : (
 		<LoginButton />
 	)
+
 	return (
 		<div id="header" className={'container-fluid py-2'}>
 			<div className="row">

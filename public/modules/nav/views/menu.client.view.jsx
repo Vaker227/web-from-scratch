@@ -4,10 +4,9 @@ const Menu = (props) => {
 	return (
 		<div
 			id="sidebar"
-			className="d-flex flex-column"
+			className={`${props.hideMenu ? 'd-none' : 'd-flex'} flex-column`}
 			style={{
-				display: props.hidden ? 'none' : 'block',
-				width: props.menu ? 200 : 60,
+				width: props.extendMenu ? 200 : 60,
 				height: '100vh',
 			}}
 		>

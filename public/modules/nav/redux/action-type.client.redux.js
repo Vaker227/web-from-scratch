@@ -1,4 +1,4 @@
 export default {
-	hiddenMenu: 'HIDDEN_MENU',
-	setMenu: 'SET_MENU',
+	hideMenu: 'HIDE_MENU',
+	extendMenu: 'EXTEND_MENU',
 }

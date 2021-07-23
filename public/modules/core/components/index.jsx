@@ -9,6 +9,7 @@ import '../../../styles/index.css'
 import '../../nav/style/header.client.css'
 import '../../nav/style/menu.client.css'
 import '../style/main-container.client.css'
+import 'bootstrap'
 
 // import fonawesome
 import '@fortawesome/fontawesome-free/js/fontawesome'

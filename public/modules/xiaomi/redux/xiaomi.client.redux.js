@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Xiaomi from '../components/xiaomi.client.component.jsx'
+import Xiaomi from '../views/xiaomi.client.view.jsx'
 import axios from 'axios'
 
 const XIAOMI_RENDER = 'XIAOMI_RENDER'
@@ -20,4 +20,4 @@ const XiaomiDTP = (dispatch) => {
 
 const XiaomiRedux = connect(XiaomiSTP, XiaomiDTP)(Xiaomi)
 
-export { XiaomiRedux as CP }
+export { XiaomiRedux as Page }

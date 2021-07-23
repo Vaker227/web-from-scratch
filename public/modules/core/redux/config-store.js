@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 import { Reducer as HeaderReducer } from '../../nav/redux/nav.client.reducer'
 
 const staticReducers = {
-	header: HeaderReducer,
+	nav: HeaderReducer,
 }
 const defaultState = {}
 

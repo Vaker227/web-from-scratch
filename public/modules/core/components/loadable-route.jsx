@@ -20,7 +20,7 @@ const Routes = routers.map((route) => {
 						import(
 							/* webpackChunkName: "[request]" */ `../../${route.file}.client.redux.js`
 						)
-							.then((data) => data.CP)
+							.then((data) => data.Page)
 							.catch(() => Error),
 					{
 						fallback: <Loading />,

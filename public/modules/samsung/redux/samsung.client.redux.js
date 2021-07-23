@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Samsung from '../components/samsung.client.component.jsx'
+import Samsung from '../views/samsung.client.view.jsx'
 const SAMSUNG_RENDER = 'SAMSUNG_RENDER'
 const SamsungSTP = (state) => {
 	return state.samsung
@@ -13,4 +13,4 @@ const SamsungDTP = (dispatch) => {
 
 const SamsungRedux = connect(SamsungSTP, SamsungDTP)(Samsung)
 
-export { SamsungRedux as CP }
+export { SamsungRedux as Page }

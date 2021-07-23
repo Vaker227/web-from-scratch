@@ -4,7 +4,7 @@ const User = require('mongoose').model('User')
 
 passport.use(
 	new LocalStratery(
-		{ usernameField: 'us', passwordField: 'pw' },
+		{ usernameField: 'username', passwordField: 'password' },
 		(username, password, done) => {
 			User.findOne({ username: username }, function (err, user) {
 				if (err) {
