@@ -45,3 +45,19 @@ module.exports.requiresLogin = (req, res, next) => {
 module.exports.getUserInfo = (req, res, next) => {
 	res.jsonp(req.user)
 }
+
+module.exports.getProfile = (req, res) => {
+	res.jsonp(req.userById)
+}
+module.exports.getUserById = (req, res, next, userId) => {
+	User.findById(userId)
+		.select('-password')
+		.exec()
+		.then((data) => {
+			req.userById = data
+			next()
+		})
+		.catch((err) => {
+			res.status(400).send(err)
+		})
+}

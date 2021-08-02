@@ -15,3 +15,7 @@ export function Logout() {
 export function GetUserInfo() {
 	return axios.get('/api/user/get-user-info')
 }
+
+export function GetProfileInfo(userId) {
+	return axios.get(`/api/user-profile/${userId}`)
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Logout } from '../../user/services/user.client.service.js'
+import { Link } from 'react-router-dom'
 
 function UserMenu(props) {
 	const handleLogout = () => {
@@ -8,23 +9,24 @@ function UserMenu(props) {
 		})
 	}
 	return (
-		<div className={'float-end d-flex me-3'}>
-			<div>{props.name} </div>
+		<div id="user-menu" className="float-end d-flex me-3 align-items-center">
+			<div>{props.user.username}</div>
 			<div className="dropdown">
 				<button
 					className="btn btn-light dropdown-toggle"
 					data-bs-toggle="dropdown"
+					style={{ padding: '15px 10px' }}
 				></button>
 				<ul className="dropdown-menu">
 					<li>
-						<a className="dropdown-item" href="#">
-							Action
-						</a>
+						<Link className="dropdown-item" to={'/my-profile'}>
+							Profile
+						</Link>
 					</li>
 					<li>
-						<a className="dropdown-item" href="#">
-							Another action
-						</a>
+						<Link className="dropdown-item" to={`/home`}>
+							Calendar
+						</Link>
 					</li>
 					<li>
 						<span className="dropdown-item btn" onClick={handleLogout}>

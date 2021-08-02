@@ -43,7 +43,7 @@ module.exports = function () {
 			resave: false,
 			saveUninitialized: false,
 			store: sessionStore,
-			cookie: { maxAge: 3600 * 24 * 31 },
+			cookie: { maxAge: 1000 * 3600 * 24 * 31 },
 		})
 	)
 

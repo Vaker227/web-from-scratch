@@ -13,9 +13,6 @@ module.exports = function router(app) {
 	app.get('/samsung', (req, res) => {
 		renderJSX(req, res)
 	})
-	app.get('/login', (req, res) => {
-		renderJSX(req, res)
-	})
 	app.get('/', (req, res) => {
 		renderJSX(req, res)
 	})

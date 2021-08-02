@@ -46,7 +46,7 @@ export default function Header(props) {
 	const userPlaceholder = !_.get(props, 'users.gotUserInfo') ? (
 		<LoadingUser />
 	) : _.get(props, 'users.user') ? (
-		<UserMenu name={props.users.user.username} handleLogout={handleLogout} />
+		<UserMenu user={props.users.user} handleLogout={handleLogout} />
 	) : (
 		<LoginButton />
 	)

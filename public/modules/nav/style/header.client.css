@@ -3,6 +3,9 @@
 	background-color: white;
 	position: fixed;
 }
+#user-menu > div {
+	margin-left: 15px;
+}
 
 .circle-loader {
 	border: 16px solid #f3f3f3;
