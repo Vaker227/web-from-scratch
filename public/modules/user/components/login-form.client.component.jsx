@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { Login } from '../../user/services/user.client.service.js'
+import { MessageHandle } from '../../helper/message-handle.jsx'
 
 function LoginForm(props) {
 	const [username, setUsername] = useState('')
@@ -17,10 +18,11 @@ function LoginForm(props) {
 		e.preventDefault()
 		Login({ username, password })
 			.then((res) => {
+				MessageHandle.success('Login success')
 				props.handleLogin(res.data)
 			})
 			.catch((err) => {
-				console.log(err)
+				MessageHandle.errorFromServer(err)
 				return null
 			})
 	}
