@@ -25,6 +25,9 @@
 # server-controller
 # env
 # glob
+# sw
+# websocket
+# hash password
 
 - alert
 - tooltip (popper.js)
@@ -32,5 +35,4 @@
 . redis
 . local storage 
 . automation test cypress 
-. sw
 
