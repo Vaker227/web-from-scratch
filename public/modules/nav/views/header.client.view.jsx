@@ -10,16 +10,31 @@ import UserMenu from '../components/user-menu.client.component.jsx'
 function LoadingUser(props) {
 	return (
 		<div
-			className={'circle-loader mx-auto'}
+			className={'circle-loader mx-auto float-end'}
 			style={{ borderWidth: 4, height: 30, width: 30 }}
 		></div>
 	)
 }
 
+function ServerStatus(props) {
+	const status = props.isOfflineMode ? (
+		<span id="server-status">
+			<span className={'circle-loader mx-auto'}></span>
+			Offline
+		</span>
+	) : (
+		''
+	)
+	return status
+}
+
 function LoginButton(props) {
 	return (
 		<Link to="/login">
-			<div className={'btn btn-primary mx-auto'} style={{ minWidth: 150 }}>
+			<div
+				className={'btn btn-primary mx-auto float-end'}
+				style={{ minWidth: 100 }}
+			>
 				Sign in
 			</div>
 		</Link>
@@ -77,7 +92,10 @@ export default function Header(props) {
 						</Link>
 					</div>
 				</div>
-				<div className="col-2 ">{userPlaceholder}</div>
+				<div className="col-2">
+					<ServerStatus isOfflineMode={props.nav.offlineMode} />
+					{userPlaceholder}
+				</div>
 			</div>
 		</div>
 	)

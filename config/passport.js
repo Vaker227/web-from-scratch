@@ -8,9 +8,15 @@ passport.serializeUser(function (user, done) {
 })
 
 passport.deserializeUser(function (id, done) {
-	User.findById(id, function (err, user) {
-		done(err, user)
-	})
+	User.findById(id)
+		.select('-password -salt')
+		.exec()
+		.then((user) => {
+			done(null, user)
+		})
+		.catch((err) => {
+			done(err)
+		})
 })
 
 glob.sync('config/strategies/*.js').forEach((strategypath) => {

@@ -3,6 +3,30 @@
 	background-color: white;
 	position: fixed;
 }
+
+#server-status {
+	display: inline-block;
+	padding: 0.375rem 0.75rem;
+	color: rgb(255, 255, 255);
+	vertical-align: middle;
+	background-color: rgb(187, 45, 59);
+	border: 1px solid rgb(176, 42, 55);
+	border-radius: 3px;
+	margin-right: 5px;
+}
+#server-status > .circle-loader {
+	border-top: solid rgb(187, 45, 59);
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	height: 15px;
+	width: 15px;
+	display: inline-block;
+	vertical-align: -2px;
+	position: relative;
+	right: 3px;
+}
+
 #user-menu > div {
 	margin-left: 15px;
 }

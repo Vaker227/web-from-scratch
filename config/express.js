@@ -6,9 +6,10 @@ const config = require('./config')
 const session = require('express-session')
 const mongoStore = require('connect-mongo')
 const passport = require('passport')
-
 const path = require('path')
 const app = express()
+
+const WebSocket = require('./websocket')
 const port = config.server.port || 3000
 
 module.exports = function () {
@@ -56,7 +57,5 @@ module.exports = function () {
 	routerpaths.forEach((path) => require('../' + path)(app))
 	require('./router.js')(app)
 
-	app.listen(port, () => {
-		console.log(`Example app listening at http://localhost:${port}`)
-	})
+	WebSocket.initServer({ app, port })
 }

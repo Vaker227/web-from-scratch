@@ -46,7 +46,8 @@
     "react-toastify": "^7.0.4",
     "react-transition-group": "^4.4.2",
     "redux": "^4.1.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "ws": "^8.1.0"
   },
   "licenses": [],
   "devDependencies": {

@@ -25,5 +25,5 @@
 		"spaced-comment": [1],
 		"react/prop-types": [0]
 	},
-	"ignorePatterns": ["/gulpfile.js", "pulic/dist/*.js"]
+	"ignorePatterns": ["/gulpfile.js", "pulic/dist/*.js", "public/sw.js"]
 }

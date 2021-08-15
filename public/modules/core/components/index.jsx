@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import App from './app.jsx'
+import { Provider } from 'react-redux'
 
 // import css file
 import '../../../styles/bootstrap.scss'
@@ -17,8 +17,9 @@ import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 
-import { Provider } from 'react-redux'
+import App from './app.jsx'
 import store from '../redux/store.js'
+import '../../config/services/config.client.service.js'
 
 const root = document.getElementById('index')
 ReactDOM.hydrate(

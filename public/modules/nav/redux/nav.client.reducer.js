@@ -4,7 +4,7 @@ const key = 'nav'
 
 // Reducer
 const HeaderReducer = (
-	state = { menu: false, isHiddenMenu: false },
+	state = { menu: false, isHiddenMenu: false, offlineMode: false },
 	action
 ) => {
 	switch (action.type) {
@@ -15,6 +15,10 @@ const HeaderReducer = (
 		case NavActionType.hideMenu:
 			return Object.assign({}, state, {
 				hideMenu: action.isHide,
+			})
+		case NavActionType.offlineMode:
+			return Object.assign({}, state, {
+				offlineMode: action.isOfflineMode,
 			})
 		default:
 			return state
